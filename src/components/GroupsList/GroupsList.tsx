@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { SearchContext } from "../SearchBar/SearchContext";
 import "./style.css";
-import {Group} from "../../modules/types";
+import {Group} from "../../types/types";
 import {GroupCard} from "../GroupCard/GroupCard";
 
 export function GroupsList() {

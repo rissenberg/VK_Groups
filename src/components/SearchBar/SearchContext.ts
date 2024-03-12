@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import {Group} from '../../modules/types';
+import {Group} from '../../types/types';
 
 interface SearchContextInterface {
   groups: Group[],

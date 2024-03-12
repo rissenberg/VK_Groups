@@ -1,5 +1,5 @@
-import {Filter, GetGroupsResponse, Group} from './types';
-import {MockGroups} from './mockData';
+import {Filter, GetGroupsResponse, Group} from '../types/types';
+import {MockGroups} from '../mockData';
 
 const defaultFilter: Filter = {
   friendsInGroup: false,
