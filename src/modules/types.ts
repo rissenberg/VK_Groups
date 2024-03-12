@@ -19,6 +19,6 @@ export interface User {
 
 export interface Filter {
   friendsInGroup: boolean,
-  groupType?: boolean,
-  avatarColor?: string
+  groupType: boolean | 'any',
+  avatarColor: string | 'any'
 }

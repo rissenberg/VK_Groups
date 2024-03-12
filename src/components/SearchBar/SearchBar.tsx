@@ -54,12 +54,8 @@ export function SearchBar(props: SearchFormArguments) {
 
     const filter: Filter = {
       friendsInGroup,
-    }
-    if (groupType !== 'any') {
-      filter.groupType = groupType === 'open';
-    }
-    if (avatarColor !== 'any') {
-      filter.avatarColor = avatarColor;
+      groupType: groupType === 'any' ? 'any' : groupType === 'open',
+      avatarColor
     }
 
     const api = new API();
