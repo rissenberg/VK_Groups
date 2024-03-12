@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import { SearchContext } from './components/SearchBar/SearchContext';
+import {SearchBar} from './components/SearchBar/SearchBar';
+import {Group} from './modules/types';
+import {GroupsList} from "./components/GroupsList/GroupsList";
+import {LoadingScreen} from "./components/LoadingScreen/LoadingScreen";
+import {SearchError} from "./components/SearchError/SearchError";
 
-function App() {
+const App = () =>  {
+  const [groups, setGroups] = useState<Group[]>([]);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
+  const searchFormProps = {
+    setGroups,
+    setErrorMessage,
+    setIsLoading
+  }
+
+  const searchContext = {
+    groups,
+    errorMessage,
+    isLoading,
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <SearchContext.Provider value={searchContext}>
+      <SearchBar {...searchFormProps} />
+      <LoadingScreen />
+      <SearchError />
+      <GroupsList />
+    </SearchContext.Provider>
   );
-}
+};
 
 export default App;

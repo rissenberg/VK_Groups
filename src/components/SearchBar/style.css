@@ -1,0 +1,40 @@
+.searchBar {
+    position: sticky;
+    top: 0;
+    padding: 14px 20px 16px 20px;
+    background-color: #ddd;
+}
+
+.searchBar_form {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.friendsCheckbox {
+    margin-bottom: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.friendsCheckbox input {
+    margin: 0 8px 0 12px;
+    width: 16px;
+}
+
+.selectGroupType, .selectGroupAvatar {
+    width: 150px;
+    font-size: 14px;
+    padding: 2px 8px;
+    margin-top: 8px;
+}
+
+.searchSubmitButton {
+    font-size: 15px;
+    border: 1px solid #555;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 4px 10px;
+}
